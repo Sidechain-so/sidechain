@@ -1,0 +1,139 @@
+.reviews {
+  background: var(--color-secondary);
+  border-radius: 1.5625rem;
+  padding: 6rem 4.375rem;
+}
+
+.reviews__title {
+  color: var(--color-primary);
+  margin-bottom: 3.125rem;
+}
+
+.reviews__cards {
+  gap: 3.125rem;
+}
+
+.reviews__card {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  border: 0.0625rem solid var(--color-primary);
+  padding: 2.5rem;
+  border-radius: 1.25rem;
+  color: var(--color-white);
+}
+
+.reviews__card .reviews__desc {
+  font-size: 1.375rem;
+  line-height: 1.4;
+  font-family: var(--secondary-fonts);
+  margin-bottom: 1.875rem;
+}
+
+.reviews__card .reviews__profile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.reviews__card .reviews__profile-image {
+  display: flex;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  border: 0.1875rem solid var(--color-primary);
+}
+
+.reviews__card .reviews__profile-image img {
+  min-height: 100%;
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.reviews__card .reviews__profile-desc p {
+  font-size: 1rem;
+  color: var(--color-primary);
+  margin-bottom: 0.3125rem;
+}
+
+.reviews__card .reviews__profile-desc span {
+  display: inline-block;
+  color: #cccccc;
+  font-size: 1rem;
+}
+
+@media (max-width: 1280px) {
+  .reviews__title {
+    margin-bottom: 2.5rem;
+  }
+
+  .reviews__cards {
+    gap: 2.5rem;
+  }
+
+  .reviews__card {
+    padding: 1.5625rem;
+  }
+
+  .reviews__card .reviews__desc {
+    font-size: 1.125rem;
+  }
+
+  .reviews__card .reviews__profile-image {
+    width: 2.8125rem;
+    height: 2.8125rem;
+  }
+
+  .reviews__card .reviews__profile-desc p {
+    font-size: 0.875rem;
+    margin-bottom: 0.125rem;
+  }
+
+  .reviews__card .reviews__profile-desc span {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews {
+    padding: 4rem 2rem;
+  }
+
+  .reviews__cards {
+    gap: 1.5625rem;
+  }
+
+  .reviews__card {
+    padding: 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .reviews__card .reviews__profile-image {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .reviews__card .reviews__desc {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .reviews__card .reviews__profile-desc p {
+    font-size: 0.8125rem;
+    margin-bottom: 0;
+  }
+
+  .reviews__card .reviews__profile-desc span {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews {
+    padding: 2rem;
+  }
+}
