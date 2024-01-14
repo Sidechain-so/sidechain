@@ -1,17 +1,13 @@
 import React from "react";
 import Navbar from "../navbar/Navbar";
-import Header from "../header/Header";
-import Hiring from "../hiring/Hiring";
-import Reviews from "../reviews/Reviews";
+import Footer from "../footer/Footer";
 
 const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <Header />
-      <Hiring />
-      <Reviews />
       {children}
+      <Footer />
     </>
   );
 };
