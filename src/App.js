@@ -13,11 +13,11 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/talent" element={<TalentPage />} />
-        <Route path="/hire" element={<HirePage />} />
-        <Route path="/privacy" element={<PrivacyPage />} />
-        <Route path="/thank-you" element={<ThanksPage />} />
+        <Route path="/sidechain/" element={<Home />} />
+        <Route path="/sidechain//talent" element={<TalentPage />} />
+        <Route path="/sidechain//hire" element={<HirePage />} />
+        <Route path="/sidechain//privacy" element={<PrivacyPage />} />
+        <Route path="/sidechain//thank-you" element={<ThanksPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
