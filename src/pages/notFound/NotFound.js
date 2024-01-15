@@ -8,7 +8,7 @@ const NotFound = () => {
     <div className={`${styles.notFound} ${styles.pageWidth} ${styles.sectionMargin}`}>
       <h2 className={styles.notFoundTitle}>404</h2>
       <p className={styles.notFoundDesc}>The requested URL was not found.</p>
-      <Link className={`${styles.notFoundBtn} ${styles.getStartedBtn}`} to="/index">Return to Home Page</Link>
+      <Link className={`${styles.notFoundBtn} ${styles.getStartedBtn}`} to="/">Return to Home Page</Link>
     </div>
   );
 };
