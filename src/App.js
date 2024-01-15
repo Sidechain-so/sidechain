@@ -14,10 +14,10 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/sidechain/" element={<Home />} />
-        <Route path="/sidechain//talent" element={<TalentPage />} />
-        <Route path="/sidechain//hire" element={<HirePage />} />
-        <Route path="/sidechain//privacy" element={<PrivacyPage />} />
-        <Route path="/sidechain//thank-you" element={<ThanksPage />} />
+        <Route path="/sidechain/talent" element={<TalentPage />} />
+        <Route path="/sidechain/hire" element={<HirePage />} />
+        <Route path="/sidechain/privacy" element={<PrivacyPage />} />
+        <Route path="/sidechain/thank-you" element={<ThanksPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
