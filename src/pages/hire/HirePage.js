@@ -30,7 +30,7 @@ const HirePage = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/test", formData);
+      await axios.post(`http://${process.env.REACT_APP_API_URL}/api/test`, formData);
 
       navigate("/thank-you");
     } catch (error) {
