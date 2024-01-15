@@ -4,38 +4,38 @@ import Logo from "../../assets/logo.svg";
 import Twitter from "../../assets/twitter.svg";
 import Mirror from "../../assets/mirror.svg";
 
-import "./Footer.scss";
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
   return (
     <>
-      <footer className="footer page-width">
+      <footer className={styles.footer}>
         <div>
-            <img loading="lazy" src={Logo} alt="logo" />
+          <img loading="lazy" src={Logo} alt="logo" />
         </div>
 
         <div>
-            <h3 className="footer__title">Quick Links</h3>
-            <ul className="footer__links">
+          <h3 className={styles.footerTitle}>Quick Links</h3>
+          <ul className={styles.footerLinks}>
             <li>
-                <a href="/privacy">Terms and Conditions</a>
+              <a href="/privacy">Terms and Conditions</a>
             </li>
-            </ul>
+          </ul>
         </div>
 
-        <div className="footer__input">
-            <div className="footer__socails">
+        <div className={styles.footerInput}>
+          <div className={styles.footerSocials}>
             <Link to="http://twitter.com/sidechain_so" target="_blank">
-                <img loading="lazy" src={Twitter} alt="twitter" />
+              <img loading="lazy" src={Twitter} alt="twitter" />
             </Link>
             <Link to="https://mirror.xyz/0xcB8676BcEC8557C1946A23cC0cBdEda7Ceb86D67" target="_blank">
-                <img loading="lazy" src={Mirror} alt="mirror" />
+              <img loading="lazy" src={Mirror} alt="mirror" />
             </Link>
-            </div>
+          </div>
         </div>
-      </footer>  
+      </footer>
 
-      <div className="page-width sub__footer">© 2023 Sidechain</div>
+      <div className={`${styles.pageWidth} ${styles.subFooter}`}>© 2023 Sidechain</div>
     </>
   );
 };

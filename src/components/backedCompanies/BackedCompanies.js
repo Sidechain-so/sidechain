@@ -11,11 +11,10 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import "./BackedCompanies.scss";
+import styles from "./BackedCompanies.module.scss";
 
 const BackedCompanies = () => {
   const settings = {
-    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 5,
@@ -25,67 +24,67 @@ const BackedCompanies = () => {
   };
 
   return (
-    <div id="scrolling_images" className="scrolling__images page-width section-margin">
-      <h2 className="scrolling__images-title section-title">
-        <span className="title__underline">joi<span className="title__neue">n</span></span> companies backed by
+    <div id={styles.scrollingImages} className={`${styles.scrollingImages} ${styles.pageWidth} ${styles.sectionMargin}`}>
+      <h2 className={`${styles.scrollingImagesTitle} ${styles.sectionTitle}`}>
+        <span className={`${styles.titleUnderline}`}>joi<span className={`${styles.titleNeue}`}>n</span></span> companies backed by
       </h2>
 
       <Slider {...settings}>
-        <div>
-            <img 
-                loading="lazy" 
-                className="scrolling__image" 
-                src={company1} 
-                alt="scroll-1" 
-            />
+        <div className={styles.swiperSlide}>
+          <img
+            loading="lazy"
+            className={styles.scrollingImage}
+            src={company1}
+            alt="scroll-1"
+          />
         </div>
-        <div>
-            <img 
-                loading="lazy" 
-                className="scrolling__image" 
-                src={company2} 
-                alt="scroll-2" 
-            />
+        <div className={styles.swiperSlide}>
+          <img
+            loading="lazy"
+            className={styles.scrollingImage}
+            src={company2}
+            alt="scroll-2"
+          />
         </div>
-        <div>
-            <img 
-                loading="lazy" 
-                className="scrolling__image" 
-                src={company3} 
-                alt="scroll-3" 
-            />
+        <div className={styles.swiperSlide}>
+          <img
+            loading="lazy"
+            className={styles.scrollingImage}
+            src={company3}
+            alt="scroll-3"
+          />
         </div>
-        <div>
-            <img 
-                loading="lazy" 
-                className="scrolling__image" 
-                src={company4} 
-                alt="scroll-4" 
-            />
+        <div className={styles.swiperSlide}>
+          <img
+            loading="lazy"
+            className={styles.scrollingImage}
+            src={company4}
+            alt="scroll-4"
+          />
         </div>
-        <div>
-            <img 
-                loading="lazy" 
-                className="scrolling__image" 
-                src={company5} 
-                alt="scroll-5" 
-            />
+        <div className={styles.swiperSlide}>
+          <img
+            loading="lazy"
+            className={styles.scrollingImage}
+            src={company5}
+            alt="scroll-5"
+          />
         </div>
-        <div>
-            <img 
-                loading="lazy" 
-                className="scrolling__image" 
-                src={company6} 
-                alt="scroll-6" 
-            />
+        <div className={styles.swiperSlide}>
+          <img
+            loading="lazy"
+            className={styles.scrollingImage}
+            src={company6}
+            alt="scroll-6"
+          />
         </div>
-        <div>
-            <img 
-                loading="lazy" 
-                className="scrolling__image" 
-                src={company7} 
-                alt="scroll-7" 
-            />
+        <div className={styles.swiperSlide}>
+          <img
+            loading="lazy"
+            className={styles.scrollingImage}
+            src={company7}
+            alt="scroll-7"
+          />
         </div>
       </Slider>
     </div>

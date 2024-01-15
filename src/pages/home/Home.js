@@ -12,14 +12,28 @@ const Home = () => {
   return (
     <>
       <Header />
-      <Hiring />
+      <Hiring 
+        title={{
+          first: "hiri",
+          second: "n",
+          third: "g",
+          fifth: "made easy"
+        }}
+        first="Submit your jobs"
+        second="Interview Hand Picked Talent"
+        third="Hire"
+      />
       <Reviews />
       <BackedCompanies />
       <Screening />
       <Talent />
-      <GetStarted />
+      <GetStarted 
+        title="START HIRING TOP ENGINEERS"
+        buttonText="Get Started For Free"
+        redirectTo="/hire"
+      />
     </>
   );
 };
 
-export default withLayout(Home);
+export default withLayout(Home, { isForHome: true });

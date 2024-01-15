@@ -2,19 +2,18 @@ import React from "react";
 import iconRef1 from "../../assets/ref-1.png";
 import iconRef2 from "../../assets/ref-2.png";
 import iconRef3 from "../../assets/ref-3.png";
-import styles from "./Reviews.module.scss";
+import styles from "./TalentReviews.module.scss";
 
-const Reviews = () => {
+const TalentReviews = () => {
   return (
-    <div id={styles.reviews} className={`${styles.pageWidth} ${styles.sectionMargin}`}>
-      <h2 className={styles.reviewsTitle + " " + styles.sectionTitle}>why top engineers from around the world trust sidechain</h2>
-
+    <div className={`${styles.clientReviews} ${styles.reviews} ${styles.pageWidth} ${styles.sectionMargin}`}>
+      <h2 className={`${styles.reviewsTitle} ${styles.sectionTitle}`}>why top engineers from around the world trust sidechain</h2>
       <div className={`${styles.reviewsCards} ${styles.gridColumn3}`}>
         <div className={styles.reviewsCard}>
           <p className={styles.reviewsDesc}>The onboarding process on sidechain was smooth. This platform has truly optimized my working experience and allowed me to focus on what I do best – delivering high-quality work. Sidechain has made me feel like I'm part of something bigger.</p>
           <div className={styles.reviewsProfile}>
             <div className={styles.reviewsProfileImage}>
-              <img loading="lazy" src={iconRef1} alt="person" />
+              <img src={iconRef1} alt="person" />
             </div>
             <div className={styles.reviewsProfileDesc}>
               <p>Patrick Loher</p>
@@ -28,7 +27,7 @@ const Reviews = () => {
           </p>
           <div className={styles.reviewsProfile}>
             <div className={styles.reviewsProfileImage}>
-              <img loading="lazy" src={iconRef2} alt="person" />
+              <img src={iconRef2} alt="person" />
             </div>
             <div className={styles.reviewsProfileDesc}>
               <p>Paul Anderson</p>
@@ -43,7 +42,7 @@ const Reviews = () => {
           </p>
           <div className={styles.reviewsProfile}>
             <div className={styles.reviewsProfileImage}>
-              <img loading="lazy" src={iconRef3} alt="person" />
+              <img src={iconRef3} alt="person" />
             </div>
             <div className={styles.reviewsProfileDesc}>
               <p>Lindsay Murray</p>
@@ -56,4 +55,4 @@ const Reviews = () => {
   );
 };
 
-export default Reviews;
+export default TalentReviews;

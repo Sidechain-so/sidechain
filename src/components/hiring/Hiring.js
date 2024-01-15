@@ -1,28 +1,28 @@
 import React from "react";
-import "./Hiring.scss";
+import styles from "./Hiring.module.scss";
 
-const Hiring = () => {
+const Hiring = ({ title, first, second, third }) => {
   return (
-    <div className="hiring page-width section-margin">
-      <h2 className="hiring__title section-title">
-        <span className="title__underline">
-          hiri<span className="title__neue">n</span>g
+    <div className={`${styles.hiring} ${styles.pageWidth} ${styles.sectionMargin}`}>
+      <h2 className={`${styles.hiringTitle} ${styles.sectionTitle}`}>
+        <span className={`${styles.titleUnderline}`}>
+          {title.first}<span className={`${styles.titleNeue}`}>{title.second}</span>{title.third}
         </span>{" "}
-        made easy
+        {title.fifth}
       </h2>
 
-      <div className="hiring__card-wrapper grid__column-3">
-        <div className="hiring__card">
-          <div className="hiring__card-number">1</div>
-          <p className="hiring__card-desc">Submit your jobs</p>
+      <div className={`${styles.hiringCardWrapper} ${styles.gridColumn3}`}>
+        <div className={styles.hiringCard}>
+          <div className={styles.hiringCardNumber}>1</div>
+          <p className={styles.hiringCardDesc}>{first}</p>
         </div>
-        <div className="hiring__card">
-          <div className="hiring__card-number">2</div>
-          <p className="hiring__card-desc">Interview Hand Picked Talent</p>
+        <div className={styles.hiringCard}>
+          <div className={styles.hiringCardNumber}>2</div>
+          <p className={styles.hiringCardDesc}>{second}</p>
         </div>
-        <div className="hiring__card">
-          <div className="hiring__card-number">3</div>
-          <p className="hiring__card-desc">Hire</p>
+        <div className={styles.hiringCard}>
+          <div className={styles.hiringCardNumber}>3</div>
+          <p className={styles.hiringCardDesc}>{third}</p>
         </div>
       </div>
     </div>

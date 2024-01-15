@@ -1,0 +1,20 @@
+
+.notFoundTitle {
+  font-size: 7rem;
+  color: #003a37;
+  text-align: center;
+  margin-bottom: 0.625rem;
+}
+
+.notFoundDesc {
+  font-size: 1rem;
+  color: #003a37;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .notFoundTitle {
+    font-size: 4rem;
+  }
+}
+

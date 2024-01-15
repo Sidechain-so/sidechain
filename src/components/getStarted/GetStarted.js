@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-import "./GetStarted.scss";
+import styles from "./GetStarted.module.scss";
 
-const GetStarted = () => {
+const GetStarted = ({ title, buttonText, redirectTo }) => {
   return (
-    <div className="get__started page-width section-margin">
-      <h2 className="get__started-title">Sta<span className="title__neue">r</span>t hiri<span class="title__neue">n</span>g to<span class="title__neue">p</span> ENGINEERS</h2>
-      <a className="get__started-btn" href="/hire">Get Started For Free</a>
+    <div className={`${styles.getStarted} ${styles.pageWidth} ${styles.sectionMargin}`}>
+      <h2 className={`${styles.getStartedTitle} ${styles.titleNeue}`}>{title}</h2>
+      <Link className={styles.getStartedBtn} to={redirectTo}>{buttonText}</Link>
     </div>
   );
 };
