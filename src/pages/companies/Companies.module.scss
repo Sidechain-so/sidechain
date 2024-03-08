@@ -1,0 +1,474 @@
+.mainWrapper {
+    padding: 7rem;
+
+    .mainColumn {
+        width: 50%;
+    }
+
+    .jobsSection {
+      margin-bottom: 7rem;
+
+      .jobSectionWrap {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 3rem;
+      }
+    }
+
+    .viewAll {
+      margin-left: 4rem;
+      color: #808080;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .companyImageWrap {
+      height: 400px;
+      object-fit: cover;
+      margin-bottom: 90px;
+
+      .companyImage {
+        width: 100%;
+        height: inherit;
+        margin: 0;
+        border-radius: 20px;
+      }
+    }
+
+    .bountySection {
+      margin-top: 5rem;
+    }
+
+    .jobWrap {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+
+      .leftSectionWrap {
+        .jobTitle {
+          font-weight: 700;
+          font-size: 22px;
+          line-height: 26px;
+          margin-bottom: 2rem;
+        }
+
+        .jobTags {
+          display: flex;
+
+          .jobTag {
+            background-color: #F2F2F2;
+            padding: 9px 17px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            text-align: center;
+            border-radius: 100px;
+            margin-right: 1rem;
+          }
+        }
+      }
+
+      .rightSectionWrap {
+        display: flex;
+        align-items: flex-end;
+          
+          .redirectButton {
+            width: 200px;
+            margin-right: 1rem;
+            height: min-content;
+            background-color: #AEFF65;
+            border-radius: 100px;
+            padding: 15px 29px;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 21px;
+            text-align: center;
+            border: none;
+          }
+          .viewButton {
+            background-color: #003A37;
+            color: #fff;
+          }
+      }
+    }
+
+    .aboutTitleWrap {
+      position: relative;
+      margin-bottom: 2rem;
+
+      .aboutTitle {
+        padding-left: 1rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 25px;
+      }
+
+      .aboutTitleLine {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 7rem;
+        height: 10px;
+        background-color: #AEFF65;
+        z-index: -1;
+        border-radius: 10px;
+      }
+    }
+
+    .aboutText {
+      font-weight: 400;
+      width: 100%;
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    .companyMainContent {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 7rem;
+
+      .firstContentColumn {
+        width: 60%;
+
+        .generalCompanyInfoWrap {
+          .companyLogoWrap {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+
+            .companyAvatar {
+              width: 100px;
+              border-radius: 20px;
+              margin-right: 3rem;
+            }
+
+            .companyName {
+              font-weight: 700;
+              font-size: 22px;
+              line-height: 26px;
+            }
+          }
+
+          .companyDesc {
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 36px;
+            margin-bottom: 4rem;
+          }
+
+          .companyLinksWrap {
+            .companyLink {
+              opacity: 30%;
+              width: 26px;
+              margin-right: 14px;
+            }
+          }
+
+        }
+
+        // .aboutWrap {
+          // .aboutTitleWrap {
+          //   position: relative;
+          //   margin-bottom: 2rem;
+
+          //   .aboutTitle {
+          //     padding-left: 1rem;
+          //     text-transform: uppercase;
+          //     font-weight: 700;
+          //     font-size: 22px;
+          //     line-height: 25px;
+          //   }
+
+          //   .aboutTitleLine {
+          //     position: absolute;
+          //     left: 0;
+          //     bottom: 0;
+          //     width: 7rem;
+          //     height: 10px;
+          //     background-color: #AEFF65;
+          //     z-index: -1;
+          //     border-radius: 10px;
+          //   }
+          // }
+
+          // .aboutText {
+          //   font-weight: 400;
+          //   width: 100%;
+          //   font-size: 16px;
+          //   line-height: 26px;
+          // }
+        // }
+      }
+
+      .flexWrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .secondContentColumn {
+        width: 30%;
+
+        .fundingContainer {
+          .fundingContentTitle {
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 25px;
+            margin-bottom: 2rem;
+          }
+
+          .fundingWrap {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+
+            .fundingLabel {
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 19px;
+            }
+
+            .fundingValue {
+              font-weight: 700;
+              font-size: 20px;
+              line-height: 25px;
+              padding-right: 7rem;
+            }
+          }
+        }
+
+        .teamContainer {
+          margin-bottom: 2rem;
+
+          .teamContentTitle {
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 25px;
+            margin-bottom: 2rem;
+          }
+
+          .teamMemberWrap {
+            display: flex;
+            margin-bottom: 0.5rem;
+            align-items: center;
+          
+            .teamMemberName {
+              margin: 0 1rem;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 19px;
+            }
+
+            .teamMemberPosition {
+              color: #969696;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 16px;
+              text-align: center;
+              padding: 9px 17px;
+              background-color: #F2F2F2;
+              border-radius: 100px;
+            }
+          }
+        }
+        
+        .owerviewContentWrap {
+          padding: 30px;
+          border: 2px solid #F2F2F2;
+          height: 100%;
+          border-radius: 20px;
+          
+          .owerviewContentTitle {
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 25px;
+            margin-bottom: 3rem;
+          }
+
+          .owerviewContent {
+            .owerviewItemRow {
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 26px;
+
+              .owerviewItem {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 18px;
+              }
+
+              .owerviewItemBold {
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 18px;
+                padding-right: 7rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .deleteIcon {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        width: 10px;
+        cursor: pointer;
+    }
+
+    .companiesTitle {
+        margin-bottom: 2rem;
+    }
+
+    .companiesList {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .companyLink {
+        color: white;
+    }
+    
+    .companiesItem {
+        position: relative;
+        padding: 1rem;
+        margin: 1rem;
+        font-weight: 600;
+        background-color: black;
+        width: fit-content;
+        border-radius: 10px; 
+        color: white;
+    }
+
+    .formWrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6rem;
+      }
+      
+      .formFullWidthInput {
+        margin-bottom: 1.875rem;
+        font-family: "Helvetica Neue";
+    
+        label {
+            display: block;
+            margin-bottom: 0.3125rem;
+            color: rgba(0, 0, 0, 0.9);
+        }
+    
+        input {
+            height: 3.125rem;
+            padding: 0.625rem;
+            width: 100%;
+            border: 0.0625rem solid #aeff65;
+            font-size: 1rem;
+            border-radius: 0.3125rem;
+            outline: none;
+        }
+      }
+      
+      .formFullWidthFile {
+        position: relative;
+        max-width: max-content;
+        margin-top: 1rem;
+        cursor: pointer;
+      }
+      
+      .formFullWidthFileInput {
+        border: none;
+        padding: 0 !important;
+        position: absolute;
+        width: 100%;
+        height: 100% !important;
+        opacity: 0;
+        z-index: 55;
+        cursor: pointer;
+        display: flex;
+      }
+      
+      .formFullWidthFileInput:hover ~ p {
+        background: #003a37;
+        color: #ffffff;
+      }
+      
+      .formFullWidthFileP {
+        max-width: max-content;
+        padding: 0.875rem 1.875rem;
+        border: 0.125rem solid #003a37;
+        border-radius: 1.5625rem;
+        color: #003a37;
+        font-weight: 600;
+        transition: 0.3s all;
+        cursor: pointer;
+      }
+      
+      .formFullWidthAttachedFileWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 0.625rem;
+        gap: 1.25rem;
+      }
+      
+      .formFullWidthAttachedFile {
+        font-size: 0.875rem;
+        color: #003a37;
+      }
+      
+      .formFullWidthAttachedFileWrapperButton {
+        width: 1rem;
+        height: 1rem;
+        display: grid;
+        place-content: center;
+        background: #003a37;
+        border: none;
+        outline: none;
+        color: #aeff65;
+        border-radius: 0.3125rem;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      
+      .formFullWidthAttachedFileWrapperButton:hover {
+        background: #aeff65;
+        color: #003a37;
+      }
+      
+      .formSubmit {
+        background: #003a37;
+        color: #aeff65;
+        font-weight: bold;
+        font-family: "Helvetica Neue";
+        border-radius: 1.5625rem;
+        margin-top: 3.125rem;
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+      
+      .formSubmit:hover {
+        color: #003a37;
+        background: #ffffff;
+      }
+
+      .companyImage {
+        margin: 1rem;
+        margin-bottom: 0;
+        width: 100px;
+      }
+
+      .btn {
+        display: inline-block;
+        background: #003a37;
+        padding: 0.9375rem 2.5rem;
+        outline: none;
+        font-family: "Inter", sans-serif;
+        border: 0.0625rem solid #003a37;
+      
+        @media (max-width: 1024px) {
+          padding: 0.625rem 1.875rem;
+        }
+      }
+}
