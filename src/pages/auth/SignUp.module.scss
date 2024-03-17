@@ -1,0 +1,140 @@
+.signupWrap {
+  display: flex;
+  // margin: 3rem 0;
+
+  .wrapper {
+    width: 60%;
+
+    .formWrap {
+      padding: 3rem;
+      padding-left: 6rem;
+    }
+
+    .signupTitle {
+      position: relative;
+      font-size: 22px;
+      font-weight: 600;
+      color: #333;
+  
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 28px;
+        border-radius: 12px;
+        background: #aeff65;
+      }
+    }
+  
+    form {
+      margin-top: 30px;
+
+      .registerButton {
+        width: 50%;
+        margin-bottom: 1rem;
+        padding: 1rem 1.875rem;
+        background: #aeff65;
+        border-radius: 1.5625rem;
+        font-weight: 700;
+        transition: 0.3s all;
+        font-size: 1rem;
+        border: 0.0625rem solid transparent;
+        cursor: pointer;
+      
+        &:hover {
+          background: #003a37;
+          color: #aeff65;
+          border-color: #aeff65;
+        }
+      }
+  
+      .formFullWidthInput {
+        width: 50%;
+        margin-bottom: 1.875rem;
+        font-family: "Helvetica Neue";
+
+        .errorMessage {
+          color: red;
+          margin-top: 0.5rem;
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 0.3125rem;
+            color: rgba(0, 0, 0, 0.9);
+        }
+    
+        input {
+            height: 3.125rem;
+            padding: 0.625rem;
+            width: 100%;
+            border: 0.0625rem solid #aeff65;
+            font-size: 1rem;
+            border-radius: 0.3125rem;
+            outline: none;
+        }
+      }
+  
+      .policy {
+        display: flex;
+        align-items: center;
+  
+        h3 {
+          color: #707070;
+          font-size: 14px;
+          font-weight: 500;
+          margin-left: 10px;
+        }
+      }
+  
+      .text {
+        width: 50%;
+        h3 {
+          color: #333;
+          width: 100%;
+          text-align: center;
+    
+          a {
+            color: #5d9e24;
+            text-decoration: none;
+          }
+        }
+      } 
+    }
+  }
+
+  .companiesList {
+    display: grid;
+    place-content: center;
+    width: 40%;
+    background-color: #003a37;
+  }
+  
+  .companiesListTitle {
+    font-size: 1rem;
+    margin-bottom: 5rem;
+    text-align: center;
+    color: white;
+  }
+  
+  .companiesListImages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 6.25rem;
+    column-gap: 3.125rem;
+
+    div {
+        width: calc(50% - 1.5625rem);
+        text-align: center;
+
+        img {
+            width: 9.375rem;
+            margin-inline: auto;
+        }
+    }
+  }
+}
