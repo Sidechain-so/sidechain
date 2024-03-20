@@ -2,95 +2,99 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import withLayout from "../../../components/layout/withLayout";
 import { Link, useParams } from "react-router-dom";
+import { useAuth } from "../../../hooks/useAuth";
 import CompanyForm from "../companyForm/CompanyForm";
 import twitterIcon from "../../../assets/twitter.png";
 import linkedinIcon from "../../../assets/linkedin.png";
 import styles from "../Companies.module.scss";
 
-const dumpTeamData = [{
-  teamAvatar: null,
-  fullName: "Enrique lucas",
-  position: "CEO"
-}, {
-  teamAvatar: null,
-  fullName: "Manuel Nunez Jay",
-  position: "CTO"
-}]
+const dumpTeamData = [];
+// [{
+//   teamAvatar: null,
+//   fullName: "Enrique lucas",
+//   position: "CEO"
+// }, {
+//   teamAvatar: null,
+//   fullName: "Manuel Nunez Jay",
+//   position: "CTO"
+// }]
 
-const dumpJobsData = [{
-  jobTitle: "Ethereum Blockchain Engineer",
-  tags: [
-    "REMOTE",
-    "WORLDWIDE",
-    "FULL-TIME"
-  ],
-  salary: "$90K-$110K",
-  jobId: ""
-}, {
-  jobTitle: "Forward Deployment Engineer",
-  tags: [
-    "ON-SITE",
-    "PORTUGAL",
-    "PART-TIME"
-  ],
-  salary: "$70K-$80K",
-  jobId: ""
-}]
+const dumpJobsData = [];
+// [{
+//   jobTitle: "Ethereum Blockchain Engineer",
+//   tags: [
+//     "REMOTE",
+//     "WORLDWIDE",
+//     "FULL-TIME"
+//   ],
+//   salary: "$90K-$110K",
+//   jobId: ""
+// }, {
+//   jobTitle: "Forward Deployment Engineer",
+//   tags: [
+//     "ON-SITE",
+//     "PORTUGAL",
+//     "PART-TIME"
+//   ],
+//   salary: "$70K-$80K",
+//   jobId: ""
+// }]
 
-const dumpBountiesData = [{
-  bountyTitle: "Product Feedback and Analysis",
-  tags: [
-    "RESEARCH",
-    "BUGS",
-    "FEEDBACK"
-  ],
-  salary: "$900",
-  bountyId: ""
-}, {
-  bountyTitle: "Mainnet Beta Testing",
-  tags: [
-    "ANALYSIS",
-    "MAINNET",
-    "TESTING"
-  ],
-  salary: "$900",
-  bountyId: ""
-}]
+const dumpBountiesData = [];
+// [{
+//   bountyTitle: "Product Feedback and Analysis",
+//   tags: [
+//     "RESEARCH",
+//     "BUGS",
+//     "FEEDBACK"
+//   ],
+//   salary: "$900",
+//   bountyId: ""
+// }, {
+//   bountyTitle: "Mainnet Beta Testing",
+//   tags: [
+//     "ANALYSIS",
+//     "MAINNET",
+//     "TESTING"
+//   ],
+//   salary: "$900",
+//   bountyId: ""
+// }]
 
 
 const CompanyDetailsPage = () => {
+  const { user } = useAuth();
   const { companyId } = useParams();
   
-  const [companyData, setCompanyData] = useState({});  
+  const [companyData, setCompanyData] = useState({
+    companyImage: user?.userData.userData.companyAvatar,
+    companyAvatar: user?.userData.userData.companyImage,
+    companyName: user?.userData.userData.companyName,
+    companyDesc: user?.userData.userData.companyDesc,
+    usefulLinks: {
+      xLink: user?.userData?.usefulLinks?.xLink,
+      linkedIn: user?.userData?.usefulLinks?.linkedIn
+    },
+    overview: {
+      hq: user?.userData?.overview?.hq,
+      size: user?.userData?.overview?.size,
+      type: user?.userData?.overview?.type,
+      websiteLink: user?.userData?.overview?.websiteLink
+    },
+    aboutUs: user?.userData.aboutUs
+  });  
   
-  useEffect(() => {
-    const getCompaniesFromServer = async () => {
-      await axios.get(`${process.env.REACT_APP_API_URL}/api/companies/${companyId}`)
-        .then(({ data }) => {
-            setCompanyData(data);
-        })
-    };
+  // useEffect(() => {
+  //   const getCompaniesFromServer = async () => {
+  //     await axios.get(`${process.env.REACT_APP_API_URL}/api/companies/${companyId}`)
+  //       .then(({ data }) => {
+  //           setCompanyData(data);
+  //       })
+  //   };
 
-    getCompaniesFromServer();
-  }, [companyId]);
+  //   getCompaniesFromServer();
+  // }, [companyId]);
 
-  console.log(companyData)
-
-  // const initialData = {
-  //   aboutUs: companyData.aboutUs,
-  //   bounties: companyData.bounties,
-  //   companyAvatar: companyData.companyAvatar,
-  //   companyDesc: companyData.companyDesc,
-  //   companyImage: companyData.companyImage,
-  //   companyName: companyData.companyName,
-  //   companyUId: companyData.companyUId,
-  //   fundRaised: companyData.fundRaised,
-  //   jobs: companyData.jobs,
-  //   overview: companyData.overview,
-  //   team: companyData.team,
-  //   usefulLinks : companyData.usefulLinks,
-  // }
-console.log(companyData)
   return (
    <div className={styles.mainWrapper}>
       {companyData 
@@ -136,20 +140,20 @@ console.log(companyData)
                   <div className={styles.owerviewContentTitle}>Overview</div>
                   <div className={styles.owerviewContent}>
                     <div className={styles.owerviewItemRow}>
-                      <div className={styles.owerviewItem}>Website</div>
-                      <div className={styles.owerviewItemBold}>{companyData?.overview?.websiteLink}</div>
+                      <div className={styles.owerviewItem}>Website:</div>
+                      <div className={styles.owerviewItemBold}>{companyData?.overview?.websiteLink || "Not specified"}</div>
                     </div>
                     <div className={styles.owerviewItemRow}>
-                      <div className={styles.owerviewItem}>Size</div>
-                      <div className={styles.owerviewItemBold}>{companyData?.overview?.size}</div>
+                      <div className={styles.owerviewItem}>Size:</div>
+                      <div className={styles.owerviewItemBold}>{companyData?.overview?.size || "Not specified"}</div>
                     </div>
                     <div className={styles.owerviewItemRow}>
-                      <div className={styles.owerviewItem}>HQ</div>
-                      <div className={styles.owerviewItemBold}>{companyData?.overview?.hq}</div>
+                      <div className={styles.owerviewItem}>HQ:</div>
+                      <div className={styles.owerviewItemBold}>{companyData?.overview?.hq || "Not specified"}</div>
                     </div>
                     <div className={styles.owerviewItemRow}>
-                      <div className={styles.owerviewItem}>Type</div>
-                      <div className={styles.owerviewItemBold}>{companyData?.overview?.type}</div>
+                      <div className={styles.owerviewItem}>Type:</div>
+                      <div className={styles.owerviewItemBold}>{companyData?.overview?.type || "Not specified"}</div>
                     </div>
                   </div>
                 </div>
@@ -163,14 +167,14 @@ console.log(companyData)
                     <span className={styles.aboutTitleLine}></span>
                   </div>
                   <div className={styles.aboutText}>
-                    {companyData?.aboutUs}
+                    {companyData?.aboutUs || "Not specified"}
                   </div>
                 </div>
               </div>
               <div className={`${styles.secondContentColumn} ${styles.flexWrap}`}>
                 <div className={styles.teamContainer}>
                   <div className={styles.teamContentTitle}>Team</div>
-                  {dumpTeamData && dumpTeamData.map((member) => {
+                  {dumpTeamData?.length ? dumpTeamData.map((member) => {
                     return (
                       <div className={styles.teamMemberWrap}>
                         <img 
@@ -182,19 +186,19 @@ console.log(companyData)
                         <div className={styles.teamMemberPosition}>{member.position}</div>
                       </div>
                     )
-                  })}
+                  }) : "Not specified"}
                 </div>
                 <div className={styles.fundingContainer}>
                   <div className={styles.fundingContentTitle}>Funding Raised</div>
-                  {companyData?.fundRaised && (
+                  {(
                     <div>
                       <div className={styles.fundingWrap}>
                         <div className={styles.fundingLabel}>Total:</div>
-                        <div className={styles.fundingValue}>{companyData?.fundRaised?.total}</div>
+                        <div className={styles.fundingValue}>{companyData?.fundRaised?.total || "Not specified"}</div>
                       </div>
                       <div className={styles.fundingWrap}>
                         <div className={styles.fundingLabel}>Stage:</div>
-                        <div className={styles.fundingValue}>{companyData?.fundRaised?.stage}</div>
+                        <div className={styles.fundingValue}>{companyData?.fundRaised?.stage || "Not specified"}</div>
                       </div>
                     </div>
                   )}
@@ -209,7 +213,7 @@ console.log(companyData)
                 </div>
                 <Link to="" className={styles.viewAll}>View All →</Link>
               </div>
-              {dumpJobsData && dumpJobsData.map(job => {
+              {dumpJobsData?.length ? dumpJobsData.map(job => {
                 return (
                   <div className={styles.jobWrap}>
                     <div className={styles.leftSectionWrap}>
@@ -226,7 +230,7 @@ console.log(companyData)
                     </div>
                   </div>
                 )
-              })}
+              }) : "No data"}
             </div>
 
             <div className={`${styles.jobsSection} ${styles.bountySection}`}>
@@ -237,7 +241,7 @@ console.log(companyData)
                 </div>
                 <Link to="" className={styles.viewAll}>View All →</Link>
               </div>
-              {dumpBountiesData && dumpBountiesData.map(job => {
+              {dumpBountiesData?.length ? dumpBountiesData.map(job => {
                 return (
                   <div className={styles.jobWrap}>
                     <div className={styles.leftSectionWrap}>
@@ -254,7 +258,7 @@ console.log(companyData)
                     </div>
                   </div>
                 )
-              })}
+              }) : "No data"}
             </div>
           </>
         ) : (

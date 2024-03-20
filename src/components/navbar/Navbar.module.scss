@@ -219,3 +219,44 @@ body {
   }
 }
 
+.userMenu {
+  position: relative;
+  cursor: pointer;
+}
+
+.companyLogo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.menuItems {
+  z-index: 6;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menuItems button {
+  border: none;
+  background-color: transparent;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.menuItems button:hover {
+  background-color: #f0f0f0;
+}
+
+.signInButton .arrowIcon {
+  margin-left: 5px;
+}
+
+.arrowIcon::before {
+  content: "\2192"; /* Юникод символ стрелки вправо */
+}

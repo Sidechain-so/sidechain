@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Navigate, useNavigate, Routes } from "react-router-dom";
-import PrivateRoute from "./PrivateRoute";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 import Home from "./pages/home/Home";
 import TalentPage from "./pages/talent/TalentPage";
 import HirePage from "./pages/hire/HirePage";
@@ -11,33 +10,12 @@ import CompaniesPage from "./pages/companies/CompaniesPage";
 import CompanyDetailsPage from "./pages/companies/companyDetails/CompanyDetailsPage";
 import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
-import Cookies from "js-cookie";
+import { ProtectedRoute } from "./ProtectedRoute"; 
+import { AuthProvider } from "./hooks/useAuth";
 
 const App = () => {
-  // const navigate = useNavigate();
-
-  // const logout = () => {
-  //   Cookies.remove("token");
-  //   navigate("/signIn");
-  // };
-
-  // useEffect(() => {
-  //   const token = Cookies.get("token");
-
-  //   if (!token) {
-  //     navigate("/signIn");
-  //   }
-  
-  //   const tokenExpiration = Cookies.get("tokenExpiration");
-  //   const currentTime = new Date().getTime();
-  
-  //   if (tokenExpiration && currentTime > tokenExpiration) {
-  //     return logout();
-  //   }
-  // }, []);
-
   return (
-    <Router>
+    <AuthProvider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/talent" element={<TalentPage />} />
@@ -47,21 +25,24 @@ const App = () => {
         <Route
           path="/companies"
           element={
-            <PrivateRoute>
+            <ProtectedRoute>
               <CompaniesPage />
-            </PrivateRoute>
+            </ProtectedRoute>
           }
         />
-        {/* <Route exact path='/companies' element={<PrivateRoute/>}> */}
-          <Route exact path='/companies' element={<CompaniesPage/>}/>
-        {/* </Route> */}
-        <Route path="/companies/:companyId" element={<CompanyDetailsPage />} />
+        <Route
+          path="/companies/:companyId"
+          element={
+            <ProtectedRoute>
+              <CompanyDetailsPage />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/signIn" element={<SignIn />} />
-        {/* <Route path="/logout" element={logout} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </Router>
+    </AuthProvider>
   );
 };
 
